@@ -25,12 +25,12 @@ pipeline {
 		}
 		stage('Integration Test'){
            steps{
-			   echo 'mvn failsafe:integration-test failsafe:verify'
+			   sh 'mvn failsafe:integration-test failsafe:verify'
 		   }
 		}
 		stage('Package'){
            steps{
-			   echo 'mvn package -DskipTests'
+			   sh 'mvn package -DskipTests'
 		   }
 		}
 		stage('Build Docker Image'){
